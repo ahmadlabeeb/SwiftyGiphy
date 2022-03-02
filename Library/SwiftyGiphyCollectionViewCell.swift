@@ -70,7 +70,7 @@ class SwiftyGiphyCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        imageView.sd_cancelCurrentAnimationImagesLoad()
+        //imageView.sd_cancelCurrentImageLoad()
         imageView.sd_cancelCurrentImageLoad()
         imageView.sd_setImage(with: nil)
         imageView.animatedImage = nil
@@ -83,9 +83,9 @@ class SwiftyGiphyCollectionViewCell: UICollectionViewCell {
     /// - Parameter imageSet: The imageset to configure the cell with
     func configureFor(imageSet: GiphyImageSet)
     {
-        imageView.sd_cacheFLAnimatedImage = false
-        imageView.sd_setShowActivityIndicatorView(true)
-        imageView.sd_setIndicatorStyle(.gray)
+        //imageView.sd_ = false
+        imageView.sd_imageIndicator?.startAnimatingIndicator()
+       // imageView.sd_setIndicatorStyle(.gray)
         imageView.sd_setImage(with: imageSet.url)
     }
 }
